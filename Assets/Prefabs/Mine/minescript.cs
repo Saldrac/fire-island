@@ -13,12 +13,10 @@ public class minescript : MonoBehaviour {
 	public void OnTriggerEnter(Collider other){
 		explosion_particle.SetActive(true);
 		gamedata.ApplyDamage(damage);
-		Invoke("SelfDestruction",3);
+		Destroy(gameObject, 5);
 		gameObject.GetComponent<AudioSource>().Play();
 		Destroy(gameObject.GetComponent<BoxCollider>());
 	}
 
-	public void SelfDestruction(){
-		Destroy(gameObject);
-	}
+
 }

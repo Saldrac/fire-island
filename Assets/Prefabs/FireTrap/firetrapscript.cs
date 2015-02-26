@@ -15,7 +15,7 @@ public class firetrapscript : MonoBehaviour {
 	public void OnTriggerEnter(Collider other){
 		explosion_particle.SetActive(true);
 		gamedata.ApplyDamage(initial_damage);
-		Invoke("SelfDestruction",5);
+		Destroy(gameObject,5);
 		gameObject.GetComponent<AudioSource>().Play();
 		gameObject.GetComponent<AudioSource>().loop = true;
 	}
@@ -25,7 +25,5 @@ public class firetrapscript : MonoBehaviour {
 			gamedata.ApplyDamage(damage_over_time);
 	}
 	
-	public void SelfDestruction(){
-		Destroy(gameObject);
-	}
+
 }
