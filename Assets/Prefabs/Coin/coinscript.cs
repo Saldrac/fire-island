@@ -10,7 +10,9 @@ public class coinscript : MonoBehaviour {
 	}
 
 	public void OnTriggerEnter(Collider collision){
-		gamedata.incrementCoins(value);
-		Destroy(gameObject);
+		if(collision.gameObject.tag == "Player"){
+			gamedata.incrementCoins(value);
+			Destroy(gameObject);
+		}
 	}
 }
