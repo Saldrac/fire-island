@@ -15,8 +15,6 @@ public class Arrow : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
-		Time.timeScale = 0.4f;
 		Shoot ();
 
 	}
