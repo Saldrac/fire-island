@@ -6,7 +6,7 @@ public class Teleport : MonoBehaviour {
 
 	public void OnTriggerEnter(Collider other){
 		Vector3 position = destination.gameObject.transform.position;
-		position.z = position.z + 5;
+		position.x = position.x + 3;
 		other.gameObject.transform.position = position;
 	}
 }
