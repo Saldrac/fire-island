@@ -22,20 +22,20 @@ function Update ()
   if(!inSpecialAction)
      if (waypointMover.isMoving()) Move(); else Idle();
    else
-     if (!animation.isPlaying) inSpecialAction = false;
+     if (!GetComponent.<Animation>().isPlaying) inSpecialAction = false;
 }
 
 //----------------------------------------------------------------------------------
 function Idle () 
 {
- if (!animation.isPlaying || animation.IsPlaying(moveAnimation.name)) animation.Play(idleAnimation.name);
+ if (!GetComponent.<Animation>().isPlaying || GetComponent.<Animation>().IsPlaying(moveAnimation.name)) GetComponent.<Animation>().Play(idleAnimation.name);
 }
 
 
 
 function Move () 
 {
- if (animation.isPlaying) animation.Play(moveAnimation.name);
+ if (GetComponent.<Animation>().isPlaying) GetComponent.<Animation>().Play(moveAnimation.name);
 }
 
 
@@ -43,7 +43,7 @@ function Move ()
 function Jump() 
 {
  inSpecialAction = true;
- animation.Play(jumpAnimation.name);
- rigidbody.AddRelativeForce(jumpForce, ForceMode.Impulse);
+ GetComponent.<Animation>().Play(jumpAnimation.name);
+ GetComponent.<Rigidbody>().AddRelativeForce(jumpForce, ForceMode.Impulse);
 }
 //----------------------------------------------------------------------------------

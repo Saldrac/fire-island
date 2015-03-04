@@ -18,7 +18,7 @@ public class flarebullet : MonoBehaviour {
 
 		StartCoroutine("flareLightoff");
 		
-		audio.PlayOneShot(flareBurningSound);
+		GetComponent<AudioSource>().PlayOneShot(flareBurningSound);
 		flarelight = GetComponent<Light>();
 		flaresound = GetComponent<AudioSource>();
 		smokepParSystem = GetComponent<ParticleRenderer>();

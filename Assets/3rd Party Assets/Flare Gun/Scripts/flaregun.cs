@@ -26,16 +26,16 @@ public class flaregun : MonoBehaviour {
 	void Update () 
 	{
 		
-		if(Input.GetButtonDown("Fire1") && !animation.isPlaying)
+		if(Input.GetButtonDown("Fire1") && !GetComponent<Animation>().isPlaying)
 		{
 			if(currentRound > 0){
 				Shoot();
 			}else{
-				animation.Play("noAmmo");
-				audio.PlayOneShot(noAmmoSound);
+				GetComponent<Animation>().Play("noAmmo");
+				GetComponent<AudioSource>().PlayOneShot(noAmmoSound);
 			}
 		}
-		if(Input.GetKeyDown(KeyCode.R) && !animation.isPlaying)
+		if(Input.GetKeyDown(KeyCode.R) && !GetComponent<Animation>().isPlaying)
 		{
 			Reload();
 			
@@ -52,8 +52,8 @@ public class flaregun : MonoBehaviour {
 		
 		
 		
-			animation.CrossFade("Shoot");
-			audio.PlayOneShot(flareShotSound);
+			GetComponent<Animation>().CrossFade("Shoot");
+			GetComponent<AudioSource>().PlayOneShot(flareShotSound);
 		
 			
 			Rigidbody bulletInstance;			
@@ -69,10 +69,10 @@ public class flaregun : MonoBehaviour {
 	void Reload()
 	{
 		if(spareRounds >= 1 && currentRound == 0){
-			audio.PlayOneShot(reloadSound);			
+			GetComponent<AudioSource>().PlayOneShot(reloadSound);			
 			spareRounds--;
 			currentRound++;
-			animation.CrossFade("Reload");
+			GetComponent<Animation>().CrossFade("Reload");
 		}
 		
 	}

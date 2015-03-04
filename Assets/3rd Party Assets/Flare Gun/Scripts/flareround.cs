@@ -25,7 +25,7 @@ public class flareround : MonoBehaviour {
 		
 		if(other.tag == "Player" && flare.spareRounds < flare.maxSpareRounds)
 		{
-			audio.PlayOneShot(pickupSound);			
+			GetComponent<AudioSource>().PlayOneShot(pickupSound);			
 			flare.spareRounds++;
 			Destroy(this.gameObject,pickupSound.length);				
 		}

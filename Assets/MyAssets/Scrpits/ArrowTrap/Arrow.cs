@@ -23,7 +23,7 @@ public class Arrow : MonoBehaviour {
 	void LateUpdate () {
 
 			if (moving)
-				transform.forward =	Vector3.Slerp(transform.forward, rigidbody.velocity.normalized - angularOffset , Time.deltaTime);
+				transform.forward =	Vector3.Slerp(transform.forward, GetComponent<Rigidbody>().velocity.normalized - angularOffset , Time.deltaTime);
 
 			if (toDelete)
 				timer += Time.deltaTime;
@@ -35,7 +35,7 @@ public class Arrow : MonoBehaviour {
 
 
 	void OnCollisionEnter (Collision col){
-		rigidbody.isKinematic = true;
+		GetComponent<Rigidbody>().isKinematic = true;
 		moving = false;
 		toDelete = true;
 
@@ -52,7 +52,7 @@ public class Arrow : MonoBehaviour {
 	
 		transform.eulerAngles = scatter;
 
-		rigidbody.AddForce (power * transform.forward *Random.Range (0.7f,1f), ForceMode.Impulse);
+		GetComponent<Rigidbody>().AddForce (power * transform.forward *Random.Range (0.7f,1f), ForceMode.Impulse);
 		moving = true;
 
 		//rigidbody.useGravity = true;
@@ -60,7 +60,7 @@ public class Arrow : MonoBehaviour {
 
 	public void Shoot2(){
 
-		rigidbody.velocity =power * transform.forward *Random.Range (0.7f,1f);
+		GetComponent<Rigidbody>().velocity =power * transform.forward *Random.Range (0.7f,1f);
 
 	}
 

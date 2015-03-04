@@ -26,7 +26,7 @@ public class FerballController : MonoBehaviour {
 
 
 	void FixedUpdate() {
-		rigidbody.AddForce(Vector3.up * forceToAdd);
+		GetComponent<Rigidbody>().AddForce(Vector3.up * forceToAdd);
 	}
 
 	void OnCollisionEnter(Collision col){
