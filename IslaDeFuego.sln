@@ -7,8 +7,6 @@ Project("{449EC2BF-F5D6-3ADA-327B-2CB7CF518A55}") = "IslaDeFuego", "Assembly-CSh
 EndProject
 Project("{449EC2BF-F5D6-3ADA-327B-2CB7CF518A55}") = "IslaDeFuego", "Assembly-CSharp-Editor.csproj", "{CBFDCD3E-7B9D-8F78-1CEA-6591BDC264CE}"
 EndProject
-Project("{449EC2BF-F5D6-3ADA-327B-2CB7CF518A55}") = "IslaDeFuego", "Assembly-UnityScript-firstpass.unityproj", "{D357A9FA-6EE3-735B-723A-3097A9D465CF}"
-EndProject
 Project("{449EC2BF-F5D6-3ADA-327B-2CB7CF518A55}") = "IslaDeFuego", "Assembly-UnityScript.unityproj", "{13A90729-30A5-7FE7-CBAB-82AA85D87B5D}"
 EndProject
 Global
@@ -29,10 +27,6 @@ Global
 		{CBFDCD3E-7B9D-8F78-1CEA-6591BDC264CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBFDCD3E-7B9D-8F78-1CEA-6591BDC264CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CBFDCD3E-7B9D-8F78-1CEA-6591BDC264CE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D357A9FA-6EE3-735B-723A-3097A9D465CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D357A9FA-6EE3-735B-723A-3097A9D465CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D357A9FA-6EE3-735B-723A-3097A9D465CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D357A9FA-6EE3-735B-723A-3097A9D465CF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{13A90729-30A5-7FE7-CBAB-82AA85D87B5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{13A90729-30A5-7FE7-CBAB-82AA85D87B5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13A90729-30A5-7FE7-CBAB-82AA85D87B5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -41,7 +35,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
+													GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
@@ -60,4 +54,5 @@ Global
 		$3.inheritsScope = text/plain
 		$3.scope = text/plain
 	EndGlobalSection
+
 EndGlobal

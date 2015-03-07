@@ -2,46 +2,33 @@
 using System.Collections;
 
 public class DayNightCycle : MonoBehaviour {
-
-	public Light sun;
-	public float base_intensity;
-	public float cos_intensity;
-	public float duration;
-	public Material day_skybox;
-	public Material night_skybox;
-	public Color day_color;
-	public Color dusk_color;
-	private bool changed_skybox;
+	
+	public float rotation_speed;
 	public GameData gamedata;
+	private Vector3 angles;
 
 	public void Start(){
 		gamedata = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameData>();
+		angles.x = 0;
+		angles.y = 0;
+		angles.z = 0;
 	}
 
 
 	// Update is called once per fixed frame
 	void FixedUpdate () {
-		float phi = Time.time / duration * 2 * Mathf.PI;
-		float amplitude  = (Mathf.Cos( phi ) * cos_intensity) + base_intensity;
-		sun.intensity = amplitude;
-		changeCicle(amplitude);
-
+		angles.x = (angles.x + rotation_speed)%360;
+		transform.localEulerAngles = angles;
+		Debug.Log(transform.localEulerAngles);
+		CheckChangeCicle();
 	}
 
-	void changeCicle(float amplitude){
-		if(amplitude>0.3){
-			RenderSettings.skybox = day_skybox;
-			RenderSettings.fogColor = Color.grey;
-			sun.color = day_color;
+	void CheckChangeCicle(){
+		if(transform.localEulerAngles.y == 0)
 			gamedata.setDay(true);
-		}
-		else if( amplitude>0.1 && amplitude<0.45){
-			sun.color = dusk_color;
-		}
-		else{
-			RenderSettings.skybox = night_skybox;
-			RenderSettings.fogColor = Color.black;
+		else
 			gamedata.setDay(false);
-		}
+
+
 		}
 }

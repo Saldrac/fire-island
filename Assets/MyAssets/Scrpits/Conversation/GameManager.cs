@@ -20,9 +20,9 @@ public class GameManager : MonoBehaviour {
 
 
 	public void TogglePlayerControl(bool newStat){
-		playerController.GetComponent<CharacterMotor>().enabled = newStat;
+/*		playerController.GetComponent<CharacterMotor>().enabled = newStat;
 		playerController.GetComponent<MouseLook>().enabled = newStat;
 		playerController.GetComponent<FPSInputController>().enabled = newStat;
-		mainCamera.GetComponent<MouseLook>().enabled = newStat;
+		mainCamera.GetComponent<MouseLook>().enabled = newStat;*/
 	}
 }
