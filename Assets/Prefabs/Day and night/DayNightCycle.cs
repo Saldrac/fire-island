@@ -19,7 +19,6 @@ public class DayNightCycle : MonoBehaviour {
 	void FixedUpdate () {
 		angles.x = (angles.x + rotation_speed)%360;
 		transform.localEulerAngles = angles;
-		Debug.Log(transform.localEulerAngles);
 		CheckChangeCicle();
 	}
 

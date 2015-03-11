@@ -12,7 +12,7 @@ public class GameData : MonoBehaviour {
 	public AudioSource camera_audiosource;
 	public AudioClip day_music;
 	public AudioClip night_music;
-	public Transform waypoint;
+	public GameObject waypoint;
 	public int coins;
 	public Canvas victorycanvas;
 	public Canvas diecanvas;
@@ -74,13 +74,13 @@ public class GameData : MonoBehaviour {
 		camera_audiosource.Play();
 	}
 
-	public void setWayPoint(Transform new_waypoint){
+	public void setWayPoint(GameObject new_waypoint){
 		waypoint = new_waypoint;
 	}
 
 	public void respawn(){
 		if(waypoint != null){
-			player.position = waypoint.position;
+			player.position = waypoint.transform.position;
 			current_player_hp = max_player_hp;
 			diecanvas.gameObject.SetActive(true);
 			Invoke("Deactivate_dead_canvas",3);

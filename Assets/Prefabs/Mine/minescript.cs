@@ -11,11 +11,13 @@ public class minescript : MonoBehaviour {
 	}
 
 	public void OnTriggerEnter(Collider other){
-		explosion_particle.SetActive(true);
-		gamedata.ApplyDamage(damage);
-		Destroy(gameObject, 5);
-		gameObject.GetComponent<AudioSource>().Play();
-		Destroy(gameObject.GetComponent<BoxCollider>());
+		if(other.gameObject.tag == "Player"){
+			explosion_particle.SetActive(true);
+			gamedata.ApplyDamage(damage);
+			Destroy(gameObject, 5);
+			gameObject.GetComponent<AudioSource>().Play();
+			Destroy(gameObject.GetComponent<BoxCollider>());
+		}
 	}
 
 
