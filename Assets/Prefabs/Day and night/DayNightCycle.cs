@@ -28,7 +28,6 @@ public class DayNightCycle : MonoBehaviour {
 */
 		angles.x = (angles.x + rotation_speed) %360;
 		transform.eulerAngles = angles;
-		Debug.Log ("my angles " + angles.x + "T. Angles " + transform.eulerAngles.x );
 
 		CheckChangeCicle();
 	}
