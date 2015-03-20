@@ -5,17 +5,29 @@ public class coinscript : MonoBehaviour {
 	public GameData gamedata;
 	public int value;
 	public float verticalOffset;
+	AudioSource audioSource;
+
+	//for destroy process
+	bool destroyRequest = false;
+	float destroyTimer = 1;
 
 	public void Start(){
 		gamedata = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameData>();
+		audioSource = GetComponent<AudioSource>();
 		SetVerticalOffset ();
 	}
+
 
 	public void OnTriggerEnter(Collider collision){
 		if(collision.gameObject.tag == "Player"){
 			gamedata.incrementCoins(value);
-			Destroy(gameObject);
+
+			audioSource.Play();
+			InitDestroyProcess();
+
+
 		}
+
 	}
 	public void SetVerticalOffset(){
 		RaycastHit hit;
@@ -25,4 +37,11 @@ public class coinscript : MonoBehaviour {
 			transform.position = newPosition;
 		}
 	}
+
+	void InitDestroyProcess(){
+		GetComponent <SphereCollider> ().enabled = false;
+		GetComponent <MeshRenderer>().enabled = false;
+		Destroy (gameObject, 1);
+	}
+
 }
